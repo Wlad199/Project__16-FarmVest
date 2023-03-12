@@ -32,7 +32,7 @@ body {
 		&_b {
 			max-width: 725px;
 			margin: 0 auto;
-			@include adaptiveValue("margin-bottom", 48, 25);
+			@include adaptiveValue("padding-bottom", 48, 25);
 		}
 	}
 }
@@ -48,17 +48,55 @@ body {
 	justify-content: space-between;
 	padding: 6px;
 	margin: 0 auto;
+	gap: 5px;
+	position: relative;
+	@media (max-width: 450px) {
+		display: block;
+		height: 150px;
+	}
 
 	&__button {
 		background-color: #23B123;
 		height: 100%;
 		min-width: 163px;
 		border-radius: 10px;
+		@media (max-width: 450px) {
+			width: 100%;
+			height: 50%;
+		}
+	}
+	&__error {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		color: red;
+		font-size: 16px;
+		transform: translate(10% ,100%);
+		@media (max-width: 450px) {
+			top: -15%;
+			transform: translate(10%,0);
+
+		}
 	}
 }
 .input {
 	width: 100%;
 	padding: 0px 0px 0px 25px;
+	color: #263238;
+	@media (max-width: 450px) {
+		height: 47%;
+		margin: 0px 0px 5px 0px;
+		border-radius: 10px;
+	}
+	&::placeholder {
+		color: #263238;
+	}
+	&._form-error {
+		color: red;
+		&::placeholder {
+			color: red;
+		}
+	}
 }
 
 
@@ -68,9 +106,12 @@ body {
 	@include adaptiveValue("padding-top", 247, 120, 1620, 767, 1);
 
 		&__container {
+			position: relative;
 		}
 
 		&__text-block {
+			position: relative;
+			z-index: 2;
 			text-align: center;
 		}
 
@@ -80,10 +121,52 @@ body {
 		&__input {
 		}
 
+			&__decore {
+		
+				position: absolute;
+				//pointer-events: none;
 
-		&__decore {
-
-			&_1 {
-			}
+				&_1 {
+					top: 51.334702%; /* 500/974 */
+					left: 0;
+				}
+		
+				&_2 {
+					top: 20.020534%; /* 195/974 */
+					left: 9.577465%; /* 136/1420 */
+					@media (max-width: 900px) {
+						display: none;
+					}
+				}
+		
+				&_3 {
+					top: 59.445585%; /* 579/974 */
+					left: 21.126761%; /* 300/1420 */
+				}
+		
+				&_4 {
+					top: -12%;
+					right: 16.619718%; /* 236/1420 */
+				}
+		
+				&_5 {
+					top: 24.12731%; /* 235/974 */
+					right: 12.605634%; /* 179/1420 */
+					@media (max-width: 900px) {
+						display: none;
+					}
+				}
+		
+				&_6 {
+					top: 51.334702%; /* 500/974 */
+					right: 0%;
+				}
+		
+				&_7 {
+					top: 16.735113%; /* 163/974 */
+					right: -10%;
+				}
 		}
 }
+
+
