@@ -141,7 +141,34 @@ body._lock {
 		@media (max-width: 767px) {
 			flex: 1 1 100%;
 		}
-
+		&:after {
+			content: '';
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			left: -171px;
+			top: -206px;
+			color: #fff;
+			border: 1px solid #FFFFFF;
+			border-radius: 50%;
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			width: 400px;
+			height: 400px;
+			left: -121px;
+			top: -266px;
+			color: #fff;
+			border: 1px solid #FFFFFF;
+			border-radius: 50%;
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
 	}
 
 	&__buttons {
@@ -171,7 +198,6 @@ body._lock {
 			}
 		}
 	}
-
 }
 .menu {
 	@include adaptiveValue("height", 182, 80, 1620, 767, 1);
