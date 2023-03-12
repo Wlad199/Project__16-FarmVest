@@ -1,0 +1,214 @@
+
+// Burger (**==MW==**) ====================================================================================================//
+
+// Запрещаем скролл основного контента при открытом бургере
+body._lock {
+	overflow: hidden;
+}
+// Прячем бургер на больших экранах
+.menu__icon {
+	display: none;
+}
+
+@media (max-width: $mobile) {
+	.menu__icon {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+	// Три полоски
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2); //10%
+			background-color: #fff;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1)); //transform: scale(1) translate(0px -50%);
+		}
+	}
+
+	.menu__icon._active {
+		span {
+			width: 0;
+		}
+		&::before,
+		&::after {
+		}
+		&::before {
+			top: calc(50% - rem(1));
+			transform: rotate(-45deg);
+		}
+		&::after {
+			bottom: calc(50% - rem(1));
+			transform: rotate(45deg);
+		}
+	}
+
+	.menu__body {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.9);
+		padding: 100px 30px 30px 30px;
+		transition: left 0.3s ease 0s;
+		overflow: auto; // Добавляем скролл
+
+		 Рисуем шапку
+		&::before {
+			content: '';
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			//height: 100px; // Высота шапки
+			//background-color: #912105;
+			z-index: 2;
+		}
+	}
+
+//	// Выезд меню-бургера при нажатии на бургер
+	.menu__body._active {
+		left: 0;
+	}
+}
+
+// button ====================================================================================================//
+
+.button {
+	display: inline-block;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 122.222222%; /* 22/18 */
+	width: 142px;
+	height: 64px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #FFFFFF;
+	border-radius: 10px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		background-color: #23B123;
+	}
+}
+
+// header ====================================================================================================//
+
+.header {
+
+	&__container {
+
+		&_big {
+		}
+	}
+
+	&__menu {
+	}
+
+	&__logo {
+		position: relative;
+		z-index: 2;
+		font-family: lato;
+		@include adaptiveValue("font-size", 36, 24, 1620, 767, 1);
+		font-weight: 500;
+		line-height: 119.444444%; /* 43/36 */
+		transition: all 0.3s ease 0s;
+		&:hover {
+			color: #23B123;
+		}
+		@media (max-width: 767px) {
+			flex: 1 1 100%;
+		}
+
+	}
+
+	&__buttons {
+		display: flex;
+	}
+
+	&__button {
+
+		&_1 {
+			margin: 0px 16px 0px 0px;
+			@media (max-width: 992px) {
+				margin: 0;
+				width: 120px;
+				height: 55px;
+			}
+			@media (max-width: 767px) {
+				margin: 0px 30px 0px 0px;
+			}
+			@media (max-width: 350px) {
+				margin: 0px 20px 0px 0px;
+			}
+		}
+	
+		&_2 {
+			@media (max-width: 992px) {
+				display: none;
+			}
+		}
+	}
+
+}
+.menu {
+	@include adaptiveValue("height", 182, 80, 1620, 767, 1);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@media (max-width: 767px) {
+		justify-content: start;
+	}
+
+	&__body {
+	}
+
+	&__list {
+		display: flex;
+		li {
+			line-height: 122.222222%; /* 22/18 */
+			&:not(:last-child){
+				@include adaptiveValue("margin-right", 44, 20, 1620, 767, 1);
+			}
+			transition: all 0.3s ease 0s;
+			&:hover {
+				color: #23B123;
+			}
+		}
+		@media (max-width: 767px) {
+			display: block;
+			li {
+				font-size: 24px;
+				&:not(:last-child){
+					margin: 0px 0px 20px 0px;
+				}
+			}
+		}
+	}
+
+	&__icon {
+		display: none;
+		@media (max-width: 767px) {
+			display: block;
+			padding: 0px 30px 0px 0px;
+		}
+	}
+}
+.menu-link {
+}
