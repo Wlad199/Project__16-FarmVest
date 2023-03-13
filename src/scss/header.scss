@@ -142,6 +142,7 @@ body._lock {
 			flex: 1 1 100%;
 		}
 		&:after {
+			pointer-events: none;
 			content: '';
 			position: absolute;
 			width: 400px;
@@ -156,6 +157,7 @@ body._lock {
 			}
 		}
 		&:before {
+			pointer-events: none;
 			content: '';
 			position: absolute;
 			width: 400px;
@@ -198,6 +200,13 @@ body._lock {
 			}
 		}
 	}
+}
+
+.header._header-scroll .menu {
+	height: 80px;
+}
+.header._header-scroll {
+	background-color: rgba(0, 0, 0, 0.4);
 }
 .menu {
 	@include adaptiveValue("height", 182, 80, 1620, 767, 1);
