@@ -122,10 +122,12 @@ body {
 		&__input {
 		}
 
-			&__decore {
+			&__decore {@media (max-width: 767px) {
+				opacity: 0.5;
+			}
+
 		
 				position: absolute;
-				//pointer-events: none;
 
 				&_1 {
 					top: 51.334702%; /* 500/974 */
@@ -135,9 +137,6 @@ body {
 				&_2 {
 					top: 20.020534%; /* 195/974 */
 					left: 9.577465%; /* 136/1420 */
-					@media (max-width: 900px) {
-						display: none;
-					}
 				}
 		
 				&_3 {
@@ -153,9 +152,6 @@ body {
 				&_5 {
 					top: 24.12731%; /* 235/974 */
 					right: 12.605634%; /* 179/1420 */
-					@media (max-width: 900px) {
-						display: none;
-					}
 				}
 		
 				&_6 {
@@ -199,5 +195,74 @@ body {
 				}
 			}
 		}
+	}
+}
+
+// howitworks ====================================================================================================//
+
+.howitworks {
+	@include adaptiveValue("padding-top", 200, 40);
+
+	&__container {
+		display: flex;
+	}
+
+	&__content {
+		flex: 0 1 50%;
+		@include adaptiveValue("padding-right", 90, 15, 1420, 1200, 1);
+	}
+
+	&__text-block {
+		text-align: left;
+	}
+
+	&__body {
+	}
+
+	&__image {
+		flex: 0 1 50%;
+		img {
+			max-width: 100%;
+		}
+	}
+}
+.block-text {
+	@include adaptiveValue("padding-bottom", 48, 30);
+
+	&__title {
+		text-align: left;
+	}
+
+	&__text {
+	}
+}
+.body-howitworks {
+
+	&__column {
+		display: flex;
+		align-items: center;
+		@include adaptiveValue("padding-bottom", 45, 30);
+	}
+
+	&__icon {
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__inform {
+		@include adaptiveValue("padding-left", 32, 25);
+		max-width: 380px;
+	}
+
+	&__title {
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 90.909091%; /* 20/22 */
+		@include adaptiveValue("padding-bottom", 16, 10);
+	}
+
+	&__text {
+		line-height: 150%;
 	}
 }
