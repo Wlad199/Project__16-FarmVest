@@ -210,6 +210,7 @@ body {
 	&__container {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: center;
 		@media (max-width: 992px) {
 			justify-content: center;
 			align-items: center;
@@ -293,5 +294,79 @@ body {
 	&__text {
 		line-height: 150%;
 		@include adaptiveValue("font-size", 20, 14, 500, 320, 1);
+	}
+}
+
+// pathway ====================================================================================================//
+
+.pathway {
+	@include adaptiveValue("padding-top", 200, 40);
+
+	&__container {
+		display: flex;
+		flex-wrap: wrap-reverse;
+		align-items: center;
+	}
+
+	&__image {
+		@include adaptiveValue("padding-right", 126, 15, 1420, 992, 1);
+		flex: 0 1 50%;
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+			@include adaptiveValue("padding-top", 80, 40, 992, 230, 1);
+			display: flex;
+			justify-content: center;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__content {
+		flex: 0 1 50%;
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+		}
+	}
+}
+.content-pathway {
+
+	&__text-block {
+	}
+
+	&__list {
+	}
+
+	&__item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 24px 30px;
+		background: rgba(255, 255, 255, 0.05);
+		border-radius: 10px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			color: #23B123;
+		}
+		&:not(:last-child){
+			margin: 0px 0px 24px 0px;
+		}
+	}
+
+	&__text {
+		font-size: 24px;
+		line-height: 177%;
+	}
+
+	&__vector {
+		padding: 0px 0px 0px 20px;
+	}
+}
+.block-text {
+
+	&__title {
+	}
+
+	&__text {
 	}
 }
