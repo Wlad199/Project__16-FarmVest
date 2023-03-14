@@ -155,6 +155,9 @@ body._lock {
 			@media (max-width: 767px) {
 				display: none;
 			}
+			.header._header-scroll &{
+				display: none;
+			}
 		}
 		&:before {
 			pointer-events: none;
@@ -168,6 +171,9 @@ body._lock {
 			border: 1px solid #FFFFFF;
 			border-radius: 50%;
 			@media (max-width: 767px) {
+				display: none;
+			}
+			.header._header-scroll &{
 				display: none;
 			}
 		}

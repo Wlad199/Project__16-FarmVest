@@ -60,6 +60,10 @@ body {
 		height: 100%;
 		min-width: 163px;
 		border-radius: 10px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			background-color: #1f9c1f;
+		}
 		@media (max-width: 450px) {
 			width: 100%;
 			height: 50%;
@@ -122,43 +126,35 @@ body {
 		&__input {
 		}
 
-			&__decore {@media (max-width: 767px) {
+			&__decore {
+				@media (max-width: 767px) {
 				opacity: 0.5;
 			}
-
-		
 				position: absolute;
-
 				&_1 {
 					top: 51.334702%; /* 500/974 */
 					left: 0;
 				}
-		
 				&_2 {
 					top: 20.020534%; /* 195/974 */
 					left: 9.577465%; /* 136/1420 */
 				}
-		
 				&_3 {
 					top: 59.445585%; /* 579/974 */
 					left: 21.126761%; /* 300/1420 */
 				}
-		
 				&_4 {
 					top: -12%;
 					right: 16.619718%; /* 236/1420 */
 				}
-		
 				&_5 {
 					top: 24.12731%; /* 235/974 */
 					right: 12.605634%; /* 179/1420 */
 				}
-		
 				&_6 {
 					top: 51.334702%; /* 500/974 */
 					right: 0%;
 				}
-		
 				&_7 {
 					top: 16.735113%; /* 163/974 */
 					right: -10%;
@@ -543,4 +539,90 @@ body {
 .block-text__text_m {
 	max-width: 560px;
 	margin: 0 auto;
+}
+
+// download ====================================================================================================//
+
+.download {
+	@include adaptiveValue("padding-top", 200, 40);
+	@include adaptiveValue("padding-bottom", 200, 20);
+
+	&__container {
+	}
+
+	&__body {
+		background: rgba(255, 255, 255, 0.07);
+		border-radius: 20px;
+		padding: 72px 0px 64px 0px;
+		@include adaptiveValue("padding-top", 72, 40);
+		@include adaptiveValue("padding-bottom", 64, 40);
+		overflow: hidden;
+	}
+
+	&__text-block {
+		max-width: 960px;
+		margin: 0 auto;
+	}
+
+	&__apps {
+		display: flex;
+		justify-content: center;
+		gap: 24px;
+		@include adaptiveValue("gap", 24, 10, 450, 320, 1);
+		position: relative;
+		&::before {
+			content: '';
+			position: absolute;
+			pointer-events: none;
+			top: -700%;
+			left: 25%;
+			width: 585px;
+			height: 585px;
+			border: 1px solid rgba(255, 255, 255, 0.37);
+			transform: rotate(-47.29deg);
+			border-radius: 50%;
+			@media (max-width: 992px) {
+				display: none;
+			}
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			pointer-events: none;
+			top: -560%;
+			left: 25%;
+			width: 585px;
+			height: 585px;
+			border: 1px solid rgba(255, 255, 255, 0.37);
+			transform: rotate(-47.29deg);
+			border-radius: 50%;
+			@media (max-width: 992px) {
+				display: none;
+			}
+		}
+		@media (max-width: 420px) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		@media (max-width: 420px) {
+			flex: 0 1 100%;
+			display: flex;
+			justify-content: center;
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
+.block-text {
+
+	&__title {
+
+		&_d {
+			text-align: center;
+			padding: 0;
+		}
+	}
 }
