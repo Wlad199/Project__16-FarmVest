@@ -294,7 +294,7 @@ body {
 }
 
 // pathway ====================================================================================================//
-
+/*
 .pathway {
 	@include adaptiveValue("padding-top", 200, 40);
 
@@ -358,7 +358,7 @@ body {
 		padding: 0px 0px 0px 20px;
 	}
 }
-
+*/
 // whychoose ====================================================================================================//
 
 .whychoose {
@@ -624,5 +624,74 @@ body {
 			text-align: center;
 			padding: 0;
 		}
+	}
+}
+
+//  ====================================================================================================//
+
+//  ====================================================================================================//
+
+//  ====================================================================================================//
+
+.pagee {
+	background-color: #263238;
+	padding: 100px 0px;
+}
+.pathway {
+
+	&__container {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__image {
+	}
+
+	&__content {
+	}
+}
+.content-pathway {
+
+	&__text-block {
+	}
+
+	&__list {
+	}
+
+	&__item {
+		padding: 24px 30px;
+		background-color: #313c42;
+		margin: 0px 0px 24px 0px;
+		border-radius: 10px;
+	}
+
+	&__label {
+		display: flex;
+		text-align: left;
+		width: 100%;
+		font-size: 24px;
+		line-height: 177%;
+		justify-content: space-between;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			color: #1f9c1f;
+		}
+		&::after{
+			content: '';
+			background: url('@img/pathway/icon/01.svg') 50% 100% / 100% no-repeat;
+			height: 24px;
+			flex: 0 0 24px;
+			transition: all 0.3s ease 0s;
+		}
+		&._spoller-active {
+			&::after{
+			transform: rotate(180deg);
+			}
+		}
+	}
+	&__text {
+		padding: 30px 0px 0px 0px;
+		line-height: 130%;
+		font-size: 18px;
 	}
 }
